@@ -1,1 +1,32 @@
-<p>pantalla-principal works!</p>
+<div class="container">
+  <h1>Bienvenido a la página de ventas</h1>
+
+  <button (click)="toggleGrafica()">{{ mostrarGrafica ? 'Ocultar gráfica' : 'Mostrar gráfica' }}</button>
+
+  <div *ngIf="mostrarGrafica">
+    <div class="filtros">
+      <button (click)="filtrarVentas('mes')">Filtrar por mes</button>
+      <button (click)="filtrarVentas('año')">Filtrar por año</button>
+      <button (click)="filtrarVentas('personalizada')">Filtrar personalizada</button>
+    </div>
+
+    <div *ngIf="filtroSeleccionado === 'mes'">
+      <h2>Ventas por mes</h2>
+      <!-- Aquí puedes utilizar una biblioteca de gráficos como Chart.js para mostrar la gráfica de puntos -->
+    </div>
+
+    <div *ngIf="filtroSeleccionado === 'año'">
+      <h2>Ventas por año</h2>
+      <!-- Aquí puedes mostrar la gráfica de puntos agrupada por año -->
+    </div>
+
+    <div *ngIf="filtroSeleccionado === 'personalizada'">
+      <h2>Ventas personalizadas</h2>
+      <!-- Aquí puedes mostrar la gráfica de puntos con opciones de personalización -->
+    </div>
+  </div>
+
+  <table>
+    <!-- Aquí muestra la tabla de ventas -->
+  </table>
+</div>
